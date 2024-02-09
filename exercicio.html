@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styly.css">
+  <link rel="stylesheet" href="./at.js">
+    <title>calcular imc</title>
+</head>
+<body> 
+    <div>
+     <h1 class="imc">IMC</h1>
+     <h2><p class="p">calcular <b>IMC</b></p></h2>
+     <div class="div2">
+     <label for="peso"><b>Peso</b> (kg):</label><br>
+     <input type="number" id="peso"><br>
+
+     <label for="altura"><b>Altura</b> (m)</label><br>
+     <input type="number" id="altura"><br> </div>
+      <br><div class="div3"><button onclick="calcularIMC()">calcular IMC</button><br>
+     <br><p id="resultado"></p>
+    </div>
+     <script>
+      function calcularIMC (){
+        var peso=parseFloat(document.getElementById("peso").value);
+        var altura=parseFloat(document.getElementById("altura").value);
+
+        if (isNaN(peso)|| isNaN(altura)|| peso <= 0 || altura <= 0){
+          document.getElementById("resultado").textContent="Por favor,insira valores validos para peso e altura";
+
+        }else{
+          var imc = peso/(altura*altura);
+          document.getElementById("resultado").textContent="Seu imc é:"+ imc.toFixed(2);
+       
+        }
+      }
+       
+     </script>
+     
+
+
+    </div>
+</body>
+</html>
